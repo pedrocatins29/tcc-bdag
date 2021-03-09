@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './components/Home/Home';
+import Home from './pages/Home/Home';
 import {ThemeProvider} from 'styled-components';
 
 const App = () => {
   const theme = {
-    bg: '#191a24',
+    bg: '#F5F5F5',
   };
 
   return (
