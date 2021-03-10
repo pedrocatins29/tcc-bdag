@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {Container, ItemText} from './styles';
 
-const Item = ({title}) => (
-  <View>
-    <Text>{title}</Text>
-  </View>
+const Item = ({title, icon, color}) => (
+  <Container>
+    <FontAwesome5 name={icon} size={24} solid color={color} />
+    <ItemText>{title}</ItemText>
+  </Container>
 );
 
 export default Item;

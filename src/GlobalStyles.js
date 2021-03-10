@@ -7,12 +7,13 @@ export const Container = styled.View`
   padding: 16px;
 `;
 
-export const ProductCard = styled.View`
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+export const RowFlex = styled.View`
+  justify-content: space-between;
+  flex-direction: row;
 `;
 
-export const RowFlex = styled.View`
-  flex-direction: row;
+export const TitleText = styled.Text`
+  font-size: 26px;
+  color: #282828;
+  font-weight: bold;
 `;
