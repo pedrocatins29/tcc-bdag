@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Carrosel from '../../components/Carrosel/Carrosel';
 import BoxCard from '../../components/SectionList/BoxCard';
 import Section from '../../components/SectionList/Section';
+import Card from '../../components/SectionList/Card';
 
 const Home = () => {
   const lojas = [
@@ -56,7 +57,8 @@ const Home = () => {
         <Icon name="filter" size={18} color="#282828" />
       </SearchBar>
       <Carrosel />
-      <Section CardItem={BoxCard} DATA={lojas} />
+      {/* <Section CardItem={BoxCard} DATA={lojas} /> */}
+      <Card />
     </Container>
   );
 };

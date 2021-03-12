@@ -5,6 +5,13 @@ import {ThemeProvider} from 'styled-components';
 const App = () => {
   const theme = {
     bg: '#F5F5F5',
+    white: '#FFFFFF',
+    text: '#282828',
+    fontSizes: {
+      sm: '12px',
+      md: '18px',
+      lg: '26px',
+    },
   };
 
   return (
