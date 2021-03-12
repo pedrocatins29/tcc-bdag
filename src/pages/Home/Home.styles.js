@@ -1,4 +1,9 @@
 import styled from 'styled-components/native';
+import {RowFlex} from '../../GlobalStyles';
+
+export const CityRowFlex = styled(RowFlex)`
+  justify-content: space-between;
+`;
 
 export const City = styled.Text`
   color: #282828;

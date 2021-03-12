@@ -1,5 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text} from 'react-native';
 import {
   CardView,
   ProductName,
@@ -7,10 +7,20 @@ import {
   ProductDescription,
   ImageStore,
   ImageContainer,
+  ProductDetailsContainer,
+  ProductNameRowFlex,
+  ProductDescriptionContainer,
 } from './styles';
-import {RowFlex} from '../../GlobalStyles';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const Card = () => {
+const Card = ({
+  productName,
+  productPrice,
+  productCategory,
+  productStore,
+  productDescription,
+  imageUri,
+}) => {
   return (
     <CardView
       style={{
@@ -24,26 +34,29 @@ const Card = () => {
 
         elevation: 4,
       }}>
-      <RowFlex>
-        <ImageContainer>
-          <ImageStore
-            source={{
-              uri:
-                'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
-            }}
-          />
-        </ImageContainer>
-        <RowFlex style={{flex: 2}}>
-          <ProductName>Alface crespa</ProductName>
-          <ProductPrice>4,99</ProductPrice>
-        </RowFlex>
-      </RowFlex>
+      <ImageContainer>
+        <ImageStore
+          source={{
+            uri: imageUri,
+          }}
+        />
+      </ImageContainer>
+      <ProductDetailsContainer>
+        <ProductNameRowFlex>
+          <ProductName>{productName}</ProductName>
+          <ProductPrice>{productPrice}</ProductPrice>
+        </ProductNameRowFlex>
+        <ProductDescriptionContainer>
+          <FontAwesome5 name="store" size={12} solid color="#282828" />
+          <ProductDescription>{productCategory}</ProductDescription>
+        </ProductDescriptionContainer>
+        <ProductDescriptionContainer>
+          <FontAwesome5 name="store" size={12} solid color="#282828" />
+          <ProductDescription>{productStore}</ProductDescription>
+        </ProductDescriptionContainer>
 
-      <ProductDescription>Verduras</ProductDescription>
-      <ProductDescription>Cantina do zé</ProductDescription>
-      <ProductDescription>
-        Um dos melhores alfaces de toda a regiao 100% organico
-      </ProductDescription>
+        <ProductDescription>{productDescription}</ProductDescription>
+      </ProductDetailsContainer>
     </CardView>
   );
 };

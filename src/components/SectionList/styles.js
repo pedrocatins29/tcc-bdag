@@ -11,9 +11,12 @@ export const BoxView = styled.View`
 `;
 
 export const CardView = styled.View`
+  align-items: center;
+  flex-direction: row;
   width: 100%;
+  height: 18%;
   background-color: ${(props) => props.theme.white};
-  padding: 8px;
+  padding: 12px;
 `;
 
 export const ImageContainer = styled.View`
@@ -31,6 +34,7 @@ export const TextStore = styled(text)`
 `;
 
 export const ProductName = styled(text)`
+  margin-bottom: 5px;
   font-family: 'Inter-SemiBold';
   font-size: ${(props) => props.theme.fontSizes.md};
 `;
@@ -41,7 +45,19 @@ export const ProductPrice = styled(text)`
 `;
 
 export const ProductDescription = styled(text)`
+  margin-left: 5px;
   font-family: 'Inter-Light';
   color: rgba(40, 40, 40, 0.7);
   font-size: ${(props) => props.theme.fontSizes.sm};
+`;
+export const ProductDetailsContainer = styled.View`
+  flex: 2;
+`;
+
+export const ProductNameRowFlex = styled(RowFlex)`
+  justify-content: space-between;
+`;
+
+export const ProductDescriptionContainer = styled(RowFlex)`
+  align-items: center;
 `;
