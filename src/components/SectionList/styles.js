@@ -2,8 +2,6 @@ import styled from 'styled-components/native';
 import {RowFlex, text} from '../../GlobalStyles';
 
 export const BoxView = styled.View`
-  flex: 1;
-  width: 33.3%;
   background-color: ${(props) => props.theme.white};
   justify-content: center;
   align-items: center;
@@ -14,7 +12,7 @@ export const CardView = styled.View`
   align-items: center;
   flex-direction: row;
   width: 100%;
-  height: 18%;
+  margin-bottom: 10px;
   background-color: ${(props) => props.theme.white};
   padding: 12px;
 `;
@@ -30,6 +28,7 @@ export const ImageStore = styled.Image`
 
 export const TextStore = styled(text)`
   text-align: center;
+  flex-wrap: wrap;
   font-size: ${(props) => props.theme.fontSizes.sm};
 `;
 

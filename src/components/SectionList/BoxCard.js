@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {BoxView, ImageStore, TextStore} from './styles';
+import {BoxView, ImageContainer, ImageStore, TextStore} from './styles';
 
 const BoxCard = ({storeName, imageUri}) => {
   return (
@@ -17,10 +17,12 @@ const BoxCard = ({storeName, imageUri}) => {
         elevation: 4,
       }}>
       <ImageStore
+        resizeMode="cover"
         source={{
           uri: imageUri,
         }}
       />
+
       <TextStore>{storeName}</TextStore>
     </BoxView>
   );

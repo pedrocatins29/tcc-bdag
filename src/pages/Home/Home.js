@@ -7,23 +7,28 @@ import Carrosel from '../../components/Carrosel/Carrosel';
 import BoxCard from '../../components/SectionList/BoxCard';
 import Section from '../../components/SectionList/Section';
 import Card from '../../components/SectionList/Card';
+import {ScrollView} from 'react-native';
 
 const Home = () => {
   const lojas = [
     {
       title: 'Lojas',
+      horizontal: true,
       data: [
         {
+          key: '1',
           imageUri:
             'https://cdn-cosmos.bluesoft.com.br/suppliers/supplier_27137689000157.png',
           storeName: 'Companhia dos fermentados',
         },
         {
+          key: '2',
           imageUri:
             'https://cdn-images-1.medium.com/max/1200/1*Jqncsxz85sX6HVxcywb_pw.jpeg',
-          storeName: 'Cogumelado',
+          storeName: 'Companhia dos fermentados',
         },
         {
+          key: '3',
           imageUri:
             'https://cdn-cosmos.bluesoft.com.br/suppliers/supplier_27137689000157.png',
           storeName: 'Companhia dos fermentados',
@@ -37,6 +42,7 @@ const Home = () => {
       title: 'Produtos em destaque',
       data: [
         {
+          key: '5',
           imageUri:
             'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
           productName: 'Alface Crespa',
@@ -47,9 +53,10 @@ const Home = () => {
           productCategory: 'Verduras',
         },
         {
+          key: '6',
           imageUri:
             'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
-          storeName: 'Alface Crespa',
+          productName: 'Alface Crespa',
           productDescription:
             'Um dos melhores alfaces de toda a regiao 100% organico',
           productStore: 'Loja do pedrao',
@@ -57,9 +64,55 @@ const Home = () => {
           productCategory: 'Verduras',
         },
         {
+          key: '7',
           imageUri:
             'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
-          storeName: 'Alface Crespa',
+          productName: 'Alface Crespa',
+          productDescription:
+            'Um dos melhores alfaces de toda a regiao 100% organico',
+          productStore: 'Loja do pedrao',
+          productPrice: '4,99/Kg',
+          productCategory: 'Verduras',
+        },
+
+        {
+          key: '8',
+          imageUri:
+            'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
+          productName: 'Alface Crespa',
+          productDescription:
+            'Um dos melhores alfaces de toda a regiao 100% organico',
+          productStore: 'Loja do pedrao',
+          productPrice: '4,99/Kg',
+          productCategory: 'Verduras',
+        },
+        {
+          key: '9',
+          imageUri:
+            'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
+          productName: 'Alface Crespa',
+          productDescription:
+            'Um dos melhores alfaces de toda a regiao 100% organico',
+          productStore: 'Loja do pedrao',
+          productPrice: '4,99/Kg',
+          productCategory: 'Verduras',
+        },
+        {
+          key: '10',
+          imageUri:
+            'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
+          productName: 'Alface Crespa',
+          productDescription:
+            'Um dos melhores alfaces de toda a regiao 100% organico',
+          productStore: 'Loja do pedrao',
+          productPrice: '4,99/Kg',
+          productCategory: 'Verduras',
+        },
+        {
+          key: '11',
+          imageUri:
+            'https://feiralivre.com/assets/uploads/produtos/comu-132eec.jpg',
+          productName: 'Alface Crespa',
           productDescription:
             'Um dos melhores alfaces de toda a regiao 100% organico',
           productStore: 'Loja do pedrao',
@@ -95,24 +148,8 @@ const Home = () => {
         <Icon name="filter" size={18} color="#282828" />
       </SearchBar>
       <Carrosel />
-      <Section CardItem={BoxCard} DATA={lojas} />
-      {/* <Section CardItem={Card} DATA={produtos} /> */}
-      <Card
-        productName={produtos[0].data[0].productName}
-        productPrice={produtos[0].data[0].productPrice}
-        productCategory={produtos[0].data[0].productCategory}
-        productStore={produtos[0].data[0].productStore}
-        productDescription={produtos[0].data[0].productDescription}
-        imageUri={produtos[0].data[0].imageUri}
-      />
-      <Card
-        productName={produtos[0].data[0].productName}
-        productPrice={produtos[0].data[0].productPrice}
-        productCategory={produtos[0].data[0].productCategory}
-        productStore={produtos[0].data[0].productStore}
-        productDescription={produtos[0].data[0].productDescription}
-        imageUri={produtos[0].data[0].imageUri}
-      />
+      <Section CardItem={Card} DATA={produtos} />
+      {/* <Section CardItem={BoxCard} DATA={lojas} /> */}
     </Container>
   );
 };
