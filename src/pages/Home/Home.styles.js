@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
-import {RowFlex} from '../../GlobalStyles';
+import {RowFlex, text} from '../../GlobalStyles';
 
 export const CityRowFlex = styled(RowFlex)`
   justify-content: space-between;
 `;
 
-export const City = styled.Text`
+export const City = styled(text)`
   color: #282828;
   padding-right: 4px;
   font-size: ${(props) => props.theme.fontSizes.sm};
@@ -35,7 +35,7 @@ export const SignUpPressable = styled.Pressable`
   height: 80px;
 `;
 
-export const SignUpText = styled.Text`
+export const SignUpText = styled(text)`
   text-align: center;
   padding: 38px;
   font-size: ${(props) => props.theme.fontSizes.lg};

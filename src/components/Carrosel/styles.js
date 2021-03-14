@@ -1,4 +1,5 @@
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
+import {text} from '../../GlobalStyles';
 
 export const Container = styled.View`
   padding: 14px;
@@ -9,7 +10,13 @@ export const FlexSafeAreaView = styled.View`
   /* flex: 1; */
 `;
 
-export const ItemText = styled.Text`
+export const ItemText = styled(text)`
   font-size: ${(props) => props.theme.fontSizes.sm};
-  color: #282828;
+  color: rgba(40, 40, 40, 0.5);
+  ${(props) =>
+    props.selected &&
+    css`
+      color: ${props.theme.text};
+      text-decoration-line: underline;
+    `}
 `;

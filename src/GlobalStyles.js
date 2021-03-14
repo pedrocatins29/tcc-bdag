@@ -17,6 +17,7 @@ export const text = styled.Text`
 `;
 
 export const TitleText = styled(text)`
+  margin-top: 10px;
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-family: 'Inter-Bold';
 `;

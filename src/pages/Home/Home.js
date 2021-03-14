@@ -19,6 +19,39 @@ import {ScrollView} from 'react-native';
 const Home = () => {
   const [search, setSearch] = useState('');
 
+  const carroselData = [
+    {
+      id: '1',
+      title: 'Alface',
+      icon: 'pepper-hot',
+      color: '#BB112A',
+    },
+    {
+      id: '2',
+      title: 'Pimenta',
+      icon: 'pepper-hot',
+      color: '#BB112A',
+    },
+    {
+      id: '3',
+      title: 'Cenoura',
+      icon: 'carrot',
+      color: '#ED9121',
+    },
+    {
+      id: '4',
+      title: 'Maca',
+      icon: 'apple-alt',
+      color: '#BA0C2E',
+    },
+    {
+      id: '5',
+      title: 'Limao',
+      icon: 'lemon',
+      color: '#fff700',
+    },
+  ];
+
   const lojas = [
     {
       key: '1',
@@ -30,7 +63,7 @@ const Home = () => {
       key: '2',
       imageUri:
         'https://cdn-images-1.medium.com/max/1200/1*Jqncsxz85sX6HVxcywb_pw.jpeg',
-      storeName: 'Companhia dos fermentados',
+      storeName: 'Cogumelado',
     },
     {
       key: '3',
@@ -126,16 +159,16 @@ const Home = () => {
           <SearchBar value={search} onChangeText={(text) => setSearch(text)} />
         </SearchBarContainer>
 
-        <Carrosel />
-        <Section CardItem={Card} data={produtos} title="Produtos em destaque" />
+        <Carrosel data={carroselData} />
         <Section
           CardItem={BoxCard}
           data={lojas}
           title="Lojas"
           horizontal={true}
         />
+        <Section CardItem={Card} data={produtos} title="Produtos em destaque" />
 
-        <SignUpPressable>
+        <SignUpPressable onPress={() => console.log('aaa')}>
           <SignUpText>Comece a vender seus produtos aqui +</SignUpText>
         </SignUpPressable>
       </Container>

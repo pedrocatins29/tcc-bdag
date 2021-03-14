@@ -1,54 +1,35 @@
-import React from 'react';
-import {FlatList} from 'react-native';
+import React, {useState, useRef} from 'react';
+import {FlatList, StyleSheet} from 'react-native';
 import Item from './Item';
 import {FlexSafeAreaView} from './styles';
 
-const DATA = [
-  {
-    id: '1',
-    title: 'Alface',
-    icon: 'pepper-hot',
-    color: '#BB112A',
-  },
-  {
-    id: '2',
-    title: 'Pimenta',
-    icon: 'pepper-hot',
-    color: '#BB112A',
-  },
-  {
-    id: '3',
-    title: 'Cenoura',
-    icon: 'carrot',
-    color: '#ED9121',
-  },
-  {
-    id: '4',
-    title: 'Maca',
-    icon: 'apple-alt',
-    color: '#BA0C2E',
-  },
-  {
-    id: '5',
-    title: 'Limao',
-    icon: 'lemon',
-    color: '#fff700',
-  },
-];
+const Carrosel = ({data}) => {
+  const [selectedItem, setSelectedItem] = useState();
 
-const Carrosel = () => {
   return (
     <FlexSafeAreaView>
       <FlatList
         horizontal={true}
-        data={DATA}
+        data={data}
         renderItem={({item}) => (
-          <Item title={item.title} icon={item.icon} color={item.color} />
+          <Item
+            title={item.title}
+            selected={selectedItem === item.title ? true : false}
+            setSelectedItem={setSelectedItem}
+            icon={item.icon}
+            color={item.color}
+          />
         )}
         keyExtractor={(item) => item.id}
       />
     </FlexSafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  teste: {
+    color: 'red',
+  },
+});
 
 export default Carrosel;
