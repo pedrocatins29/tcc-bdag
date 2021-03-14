@@ -37,16 +37,14 @@ const DATA = [
 ];
 
 const Carrosel = () => {
-  const renderItem = ({item}) => (
-    <Item title={item.title} icon={item.icon} color={item.color} />
-  );
-
   return (
     <FlexSafeAreaView>
       <FlatList
         horizontal={true}
         data={DATA}
-        renderItem={renderItem}
+        renderItem={({item}) => (
+          <Item title={item.title} icon={item.icon} color={item.color} />
+        )}
         keyExtractor={(item) => item.id}
       />
     </FlexSafeAreaView>

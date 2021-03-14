@@ -2,13 +2,16 @@ import styled from 'styled-components/native';
 import {RowFlex, text} from '../../GlobalStyles';
 
 export const BoxView = styled.View`
+  flex: 0 0 32%;
   background-color: ${(props) => props.theme.white};
   justify-content: center;
   align-items: center;
   padding: 8px;
+  margin: 4px;
 `;
 
 export const CardView = styled.View`
+  border-radius: 4px;
   align-items: center;
   flex-direction: row;
   width: 100%;
@@ -59,4 +62,9 @@ export const ProductNameRowFlex = styled(RowFlex)`
 
 export const ProductDescriptionContainer = styled(RowFlex)`
   align-items: center;
+`;
+
+export const ViewCem = styled.View`
+  justify-content: center;
+  flex-direction: row;
 `;

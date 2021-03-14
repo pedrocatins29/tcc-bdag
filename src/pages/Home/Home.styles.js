@@ -8,13 +8,36 @@ export const CityRowFlex = styled(RowFlex)`
 export const City = styled.Text`
   color: #282828;
   padding-right: 4px;
+  font-size: ${(props) => props.theme.fontSizes.sm};
+`;
+
+export const SearchBarContainer = styled(RowFlex)`
+  align-items: center;
+  background-color: #ffffff;
+  margin: 20px 0;
+  border-radius: 24px;
 `;
 
 export const SearchBar = styled.TextInput`
-  background-color: #ffffff;
-  margin: 20px 0;
-  width: 100%;
-  height: 40px;
-  border-radius: 25px;
-  font-size: 20px;
+  padding-left: 38px;
+  padding-right: 38px;
+  flex: 1;
+  font-size: 14px;
+`;
+
+export const SignUpPressable = styled.Pressable`
+  padding: 8px;
+  margin-top: 16px;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({theme}) => theme.text};
+  height: 80px;
+`;
+
+export const SignUpText = styled.Text`
+  text-align: center;
+  padding: 38px;
+  font-size: ${(props) => props.theme.fontSizes.lg};
+  color: ${({theme}) => theme.white};
 `;

@@ -1,39 +1,24 @@
 import React from 'react';
-import {SafeAreaView, SectionList, FlatList, Dimensions} from 'react-native';
 import {TitleText} from '../../GlobalStyles';
 import {ViewCem} from './styles';
+import {View} from 'react-native';
 
-const Section = ({CardItem, DATA}) => {
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
+const Section = ({CardItem, data, title, horizontal = false}) => {
   return (
-    <SafeAreaView>
-      <SectionList
-        stickySectionHeadersEnabled={false}
-        sections={DATA}
-        keyExtractor={(item, index) => item.storeName + item.key}
-        renderSectionHeader={({section}) => (
-          <>
-            <TitleText>{section.title}</TitleText>
-            {section.horizontal ? (
-              <FlatList
-                horizontal={true}
-                keyExtractor={(item) => item.key}
-                data={section.data}
-                renderItem={({item}) => <CardItem {...item} />}
-                showsHorizontalScrollIndicator={false}
-              />
-            ) : null}
-          </>
-        )}
-        renderItem={({item, section}) => {
-          if (section.horizontal) {
-            return null;
-          }
+    <>
+      <TitleText>{title}</TitleText>
+      {horizontal ? (
+        <ViewCem>
+          {data.map((item) => {
+            return <CardItem {...item} />;
+          })}
+        </ViewCem>
+      ) : (
+        data.map((item) => {
           return <CardItem {...item} />;
-        }}
-      />
-    </SafeAreaView>
+        })
+      )}
+    </>
   );
 };
 

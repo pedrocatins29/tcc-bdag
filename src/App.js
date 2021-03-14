@@ -8,9 +8,11 @@ const App = () => {
     white: '#FFFFFF',
     text: '#282828',
     fontSizes: {
-      sm: '12px',
+      'x-sm': '12px',
+      sm: '14px',
       md: '18px',
-      lg: '26px',
+      lg: '22px',
+      'x-lg': '26px',
     },
   };
 
