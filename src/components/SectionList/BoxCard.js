@@ -1,10 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {BoxView, ImageContainer, ImageStore, TextStore} from './styles';
+import {BoxView, ImageStore, TextStore} from './styles';
 
-const BoxCard = ({storeName, imageUri}) => {
+const BoxCard = ({storeName, imageUri, navigation}) => {
   return (
     <BoxView
+      onPress={() =>
+        navigation.navigate('ProductList', {
+          name: storeName,
+        })
+      }
       style={{
         shadowColor: '#000',
         shadowOffset: {

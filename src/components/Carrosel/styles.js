@@ -11,7 +11,7 @@ export const FlexSafeAreaView = styled.View`
 `;
 
 export const ItemText = styled(text)`
-  font-size: ${(props) => props.theme.fontSizes.sm};
+  font-size: ${(props) => props.theme.font.sm};
   color: rgba(40, 40, 40, 0.5);
   ${(props) =>
     props.selected &&

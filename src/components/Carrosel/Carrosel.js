@@ -1,5 +1,5 @@
-import React, {useState, useRef} from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {FlatList} from 'react-native';
 import Item from './Item';
 import {FlexSafeAreaView} from './styles';
 
@@ -25,11 +25,5 @@ const Carrosel = ({data}) => {
     </FlexSafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  teste: {
-    color: 'red',
-  },
-});
 
 export default Carrosel;

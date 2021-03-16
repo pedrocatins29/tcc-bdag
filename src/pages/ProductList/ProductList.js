@@ -4,8 +4,11 @@ import Section from '../../components/SectionList/Section';
 import Card from '../../components/SectionList/Card';
 import Carrosel from '../../components/Carrosel/Carrosel';
 import {Container} from '../../GlobalStyles';
+import {useHeaderHeight} from '@react-navigation/stack';
 
 const ProductList = () => {
+  const headerHeight = useHeaderHeight();
+
   const data = [
     {
       category: 'Alface',
@@ -63,7 +66,7 @@ const ProductList = () => {
   ];
 
   return (
-    <Container>
+    <Container style={{paddingTop: headerHeight}}>
       <Carrosel data={carroselData} />
       {data.map((item, index) => {
         return (

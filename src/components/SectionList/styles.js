@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import {RowFlex, text} from '../../GlobalStyles';
 
-export const BoxView = styled.View`
+export const BoxView = styled.Pressable`
   flex: 0 0 32%;
   background-color: ${(props) => props.theme.white};
   justify-content: center;
@@ -32,17 +32,17 @@ export const ImageStore = styled.Image`
 export const TextStore = styled(text)`
   text-align: center;
   flex-wrap: wrap;
-  font-size: ${(props) => props.theme.fontSizes.sm};
+  font-size: ${(props) => props.theme.font.sm};
 `;
 
 export const ProductName = styled(text)`
   margin-bottom: 5px;
   font-family: 'Inter-SemiBold';
-  font-size: ${(props) => props.theme.fontSizes.md};
+  font-size: ${(props) => props.theme.font.md};
 `;
 
 export const ProductPrice = styled(text)`
-  font-size: ${(props) => props.theme.fontSizes.md};
+  font-size: ${(props) => props.theme.font.md};
   font-family: 'Inter-Light';
 `;
 
@@ -50,7 +50,7 @@ export const ProductDescription = styled(text)`
   margin-left: 5px;
   font-family: 'Inter-Light';
   color: rgba(40, 40, 40, 0.7);
-  font-size: ${(props) => props.theme.fontSizes.sm};
+  font-size: ${(props) => props.theme.font.sm};
 `;
 export const ProductDetailsContainer = styled.View`
   flex: 2;

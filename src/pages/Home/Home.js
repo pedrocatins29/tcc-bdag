@@ -16,7 +16,7 @@ import Section from '../../components/SectionList/Section';
 import Card from '../../components/SectionList/Card';
 import {ScrollView} from 'react-native';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [search, setSearch] = useState('');
 
   const carroselData = [
@@ -161,6 +161,7 @@ const Home = () => {
 
         <Carrosel data={carroselData} />
         <Section
+          navigation={navigation}
           CardItem={BoxCard}
           data={lojas}
           title="Lojas"
