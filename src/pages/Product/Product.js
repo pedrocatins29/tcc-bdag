@@ -16,6 +16,7 @@ import {
   ProductNameRowFlex,
   ProductPrice,
 } from '../../components/SectionList/styles';
+import {styles} from '../../StyleSheetGlobal';
 
 const Product = ({route}) => {
   const headerHeight = useHeaderHeight();
@@ -29,18 +30,7 @@ const Product = ({route}) => {
   } = route.params;
   return (
     <Container style={{paddingTop: headerHeight}}>
-      <CardView
-        style={{
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 2,
-          },
-          shadowOpacity: 0.23,
-          shadowRadius: 2.62,
-
-          elevation: 4,
-        }}>
+      <CardView style={styles.shadow}>
         <Image
           style={{width: '100%', aspectRatio: 1}}
           source={{
@@ -49,25 +39,25 @@ const Product = ({route}) => {
         />
 
         <CategoryText>{productCategory}</CategoryText>
-        <ProductNameRowFlex style={styles.marginBot}>
+        <ProductNameRowFlex style={style.marginBot}>
           <ProductName>{productName}</ProductName>
           <ProductPrice>{productPrice}</ProductPrice>
         </ProductNameRowFlex>
-        <Line style={styles.marginBot} />
+        <Line style={style.marginBot} />
         <ProductDescriptionContainer>
-          <CustomProductDescription style={styles.marginBot}>
+          <CustomProductDescription style={style.marginBot}>
             {productDescription}
           </CustomProductDescription>
         </ProductDescriptionContainer>
-        <ProductDescriptionContainer style={styles.marginBot}>
+        <ProductDescriptionContainer style={style.marginBot}>
           <FontAwesome5 name="store" size={12} solid color="#282828" />
           <ProductDescription>{productStore}</ProductDescription>
         </ProductDescriptionContainer>
-        <ProductDescriptionContainer style={styles.marginBot}>
+        <ProductDescriptionContainer style={style.marginBot}>
           <FontAwesome5 name="whatsapp" size={16} solid color="#282828" />
           <ProductDescription>981044341</ProductDescription>
         </ProductDescriptionContainer>
-        <ProductDescriptionContainer style={styles.marginBot}>
+        <ProductDescriptionContainer style={style.marginBot}>
           <FontAwesome5 name="map-pin" size={16} solid color="#282828" />
           <ProductDescription>
             Rua Joaquim de almeida pina 158 - Flandria
@@ -78,7 +68,7 @@ const Product = ({route}) => {
   );
 };
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   marginBot: {
     marginBottom: 8,
   },

@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {BoxView, ImageStore, TextStore} from './styles';
+import {styles} from '../../StyleSheetGlobal';
 
 const BoxCard = ({storeName, imageUri, navigation}) => {
   return (
@@ -10,17 +11,7 @@ const BoxCard = ({storeName, imageUri, navigation}) => {
           name: storeName,
         })
       }
-      style={{
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-
-        elevation: 4,
-      }}>
+      style={styles.shadow}>
       <ImageStore
         resizeMode="cover"
         source={{

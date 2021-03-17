@@ -12,6 +12,7 @@ import {
   ProductDescriptionContainer,
 } from './styles';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {styles} from '../../StyleSheetGlobal';
 
 const Card = ({
   productName,
@@ -35,17 +36,7 @@ const Card = ({
           name: productName,
         })
       }
-      style={{
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-
-        elevation: 4,
-      }}>
+      style={styles.shadow}>
       <ImageContainer>
         <ImageStore
           source={{

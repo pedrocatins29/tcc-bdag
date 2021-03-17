@@ -15,6 +15,7 @@ import BoxCard from '../../components/SectionList/BoxCard';
 import Section from '../../components/SectionList/Section';
 import Card from '../../components/SectionList/Card';
 import {ScrollView} from 'react-native';
+import {styles} from '../../StyleSheetGlobal';
 
 const Home = ({navigation}) => {
   const [search, setSearch] = useState('');
@@ -129,18 +130,7 @@ const Home = ({navigation}) => {
           </RowFlex>
           <Icon name="sign-out" size={22} color="#282828" />
         </CityRowFlex>
-        <SearchBarContainer
-          style={{
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.23,
-            shadowRadius: 2.62,
-
-            elevation: 4,
-          }}>
+        <SearchBarContainer style={styles.shadow}>
           <Icon
             name="search"
             size={22}
