@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components/native';
 import {text} from '../../GlobalStyles';
 
 export const Container = styled.View`
-  padding: 14px;
+  padding: 16px;
   align-items: center;
 `;
 

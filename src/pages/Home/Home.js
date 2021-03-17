@@ -167,7 +167,12 @@ const Home = ({navigation}) => {
           title="Lojas"
           horizontal={true}
         />
-        <Section CardItem={Card} data={produtos} title="Produtos em destaque" />
+        <Section
+          navigation={navigation}
+          CardItem={Card}
+          data={produtos}
+          title="Produtos em destaque"
+        />
 
         <SignUpPressable onPress={() => console.log('aaa')}>
           <SignUpText>Comece a vender seus produtos aqui +</SignUpText>

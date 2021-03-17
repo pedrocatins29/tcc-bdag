@@ -22,7 +22,7 @@ export const SearchBar = styled.TextInput`
   padding-left: 38px;
   padding-right: 38px;
   flex: 1;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.font.sm};
 `;
 
 export const SignUpPressable = styled.Pressable`

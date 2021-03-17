@@ -10,7 +10,7 @@ export const BoxView = styled.Pressable`
   margin: 4px;
 `;
 
-export const CardView = styled.View`
+export const CardView = styled.Pressable`
   border-radius: 4px;
   align-items: center;
   flex-direction: row;
@@ -42,14 +42,14 @@ export const ProductName = styled(text)`
 `;
 
 export const ProductPrice = styled(text)`
-  font-size: ${(props) => props.theme.font.md};
   font-family: 'Inter-Light';
+  font-size: ${(props) => props.theme.font.md};
 `;
 
 export const ProductDescription = styled(text)`
   margin-left: 5px;
   font-family: 'Inter-Light';
-  color: rgba(40, 40, 40, 0.7);
+  color: ${(props) => props.theme.text};
   font-size: ${(props) => props.theme.font.sm};
 `;
 export const ProductDetailsContainer = styled.View`

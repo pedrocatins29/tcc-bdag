@@ -20,9 +20,21 @@ const Card = ({
   productStore,
   productDescription,
   imageUri,
+  navigation,
 }) => {
   return (
     <CardView
+      onPress={() =>
+        navigation.navigate('Product', {
+          productName,
+          productPrice,
+          productCategory,
+          productStore,
+          productDescription,
+          imageUri,
+          name: productName,
+        })
+      }
       style={{
         shadowColor: '#000',
         shadowOffset: {

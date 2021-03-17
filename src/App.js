@@ -4,12 +4,13 @@ import {ThemeProvider} from 'styled-components';
 import ProductList from './pages/ProductList/ProductList';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import Product from './pages/Product/Product';
 
 const App = () => {
   const theme = {
     bg: '#F5F5F5',
     white: '#FFFFFF',
-    green: '#ADC178',
+    green: '#00E676',
     text: '#282828',
     font: {
       'x-sm': '12px',
@@ -22,6 +23,18 @@ const App = () => {
 
   const Stack = createStackNavigator();
 
+  const headerOptions = ({route}) => {
+    return {
+      title: route.params.name,
+      headerTransparent: true,
+      headerTitleAlign: 'center',
+      headerTintColor: '#282828',
+      headerTitleStyle: {
+        fontFamily: 'Inter-Regular',
+      },
+    };
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
@@ -33,16 +46,13 @@ const App = () => {
           />
           <Stack.Screen
             name="ProductList"
-            options={({route}) => ({
-              title: route.params.name,
-              headerTransparent: true,
-              headerTitleAlign: 'center',
-              headerTintColor: '#282828',
-              headerTitleStyle: {
-                fontFamily: 'Inter-Regular',
-              },
-            })}
+            options={headerOptions}
             component={ProductList}
+          />
+          <Stack.Screen
+            name="Product"
+            component={Product}
+            options={headerOptions}
           />
         </Stack.Navigator>
       </NavigationContainer>
