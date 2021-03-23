@@ -20,6 +20,6 @@ export const text = styled.Text.attrs((props) => ({
 
 export const TitleText = styled(text)`
   margin-top: 10px;
-  font-size: ${(props) => props.theme.font.lg};
+  font-size: ${(props) => props.theme.font.xxlg};
   font-family: 'Inter-Bold';
 `;

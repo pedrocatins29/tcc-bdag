@@ -3,7 +3,7 @@ import {FlatList} from 'react-native';
 import Item from './Item';
 import {FlexSafeAreaView} from './styles';
 
-const Carrosel = ({data}) => {
+const Carousel = ({data}) => {
   const [selectedItem, setSelectedItem] = useState();
 
   return (
@@ -26,4 +26,4 @@ const Carrosel = ({data}) => {
   );
 };
 
-export default Carrosel;
+export default Carousel;

@@ -13,11 +13,15 @@ const App = () => {
     green: '#00E676',
     text: '#282828',
     font: {
-      'x-sm': '12px',
-      sm: '14px',
+      xxxsm: '10px',
+      xxsm: '12px',
+      xsm: '14px',
+      sm: '16px',
       md: '18px',
-      lg: '22px',
-      'x-lg': '26px',
+      lg: '20px',
+      xlg: '22px',
+      xxlg: '24px',
+      xxxlg: '26px',
     },
   };
 

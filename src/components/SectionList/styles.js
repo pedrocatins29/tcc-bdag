@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import {RowFlex, text} from '../../GlobalStyles';
 
 export const BoxView = styled.Pressable`
@@ -32,25 +32,40 @@ export const ImageStore = styled.Image`
 export const TextStore = styled(text)`
   text-align: center;
   flex-wrap: wrap;
-  font-size: ${(props) => props.theme.font.sm};
+  font-size: ${(props) => props.theme.font.xsm};
 `;
 
 export const ProductName = styled(text)`
   margin-bottom: 5px;
   font-family: 'Inter-SemiBold';
   font-size: ${(props) => props.theme.font.md};
+  ${(props) =>
+    props.screen &&
+    css`
+      font-size: ${props.theme.font.xlg};
+    `}
 `;
 
 export const ProductPrice = styled(text)`
   font-family: 'Inter-Light';
   font-size: ${(props) => props.theme.font.md};
+  ${(props) =>
+    props.screen &&
+    css`
+      font-size: ${props.theme.font.xlg};
+    `}
 `;
 
 export const ProductDescription = styled(text)`
   margin-left: 5px;
   font-family: 'Inter-Light';
   color: ${(props) => props.theme.text};
-  font-size: ${(props) => props.theme.font.sm};
+  font-size: ${(props) => props.theme.font.xsm};
+  ${(props) =>
+    props.screen &&
+    css`
+      font-size: ${props.theme.font.sm};
+    `}
 `;
 export const ProductDetailsContainer = styled.View`
   flex: 2;

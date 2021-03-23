@@ -2,14 +2,14 @@ import styled from 'styled-components/native';
 import {text} from '../../GlobalStyles';
 
 export const CardView = styled.View`
-  flex: 1;
+  flex: 2;
   background-color: ${(props) => props.theme.white};
   padding: 24px;
 `;
 
 export const CategoryText = styled.Text`
   color: ${({theme}) => theme.green};
-  font-size: ${({theme}) => theme.font.sm};
+  font-size: ${({theme}) => theme.font.md};
 `;
 
 export const Line = styled.View`
@@ -21,5 +21,5 @@ export const Line = styled.View`
 export const CustomProductDescription = styled(text)`
   font-family: 'Inter-Light';
   color: ${(props) => props.theme.text};
-  font-size: ${(props) => props.theme.font.sm};
+  font-size: ${(props) => props.theme.font.md};
 `;

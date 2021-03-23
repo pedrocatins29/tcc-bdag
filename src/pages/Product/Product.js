@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {useHeaderHeight} from '@react-navigation/stack';
 import {Container} from '../../GlobalStyles';
 import {
@@ -16,55 +16,49 @@ import {
   ProductNameRowFlex,
   ProductPrice,
 } from '../../components/SectionList/styles';
-import {styles} from '../../StyleSheetGlobal';
+import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 
 const Product = ({route}) => {
   const headerHeight = useHeaderHeight();
   const {
-    productName,
-    productPrice,
-    productCategory,
-    productStore,
-    productDescription,
-    imageUri,
+    name,
+    price,
+    category,
+    store,
+    description,
+    images,
+    phone,
+    address,
   } = route.params;
   return (
-    <Container style={{paddingTop: headerHeight}}>
-      <CardView style={styles.shadow}>
-        <Image
-          style={{width: '100%', aspectRatio: 1}}
-          source={{
-            uri: imageUri,
-          }}
-        />
-
-        <CategoryText>{productCategory}</CategoryText>
+    <View style={{flex: 1, backgroundColor: 'white', paddingTop: headerHeight}}>
+      <ImageCarousel images={images} />
+      <CardView>
+        <CategoryText>{category}</CategoryText>
         <ProductNameRowFlex style={style.marginBot}>
-          <ProductName>{productName}</ProductName>
-          <ProductPrice>{productPrice}</ProductPrice>
+          <ProductName screen={true}>{name}</ProductName>
+          <ProductPrice screen={true}>{price}</ProductPrice>
         </ProductNameRowFlex>
         <Line style={style.marginBot} />
         <ProductDescriptionContainer>
           <CustomProductDescription style={style.marginBot}>
-            {productDescription}
+            {description}
           </CustomProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer style={style.marginBot}>
-          <FontAwesome5 name="store" size={12} solid color="#282828" />
-          <ProductDescription>{productStore}</ProductDescription>
+          <FontAwesome5 name="store" size={18} solid color="#282828" />
+          <ProductDescription screen={true}>{store}</ProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer style={style.marginBot}>
-          <FontAwesome5 name="whatsapp" size={16} solid color="#282828" />
-          <ProductDescription>981044341</ProductDescription>
+          <FontAwesome5 name="whatsapp" size={22} solid color="#282828" />
+          <ProductDescription screen={true}>{phone}</ProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer style={style.marginBot}>
-          <FontAwesome5 name="map-pin" size={16} solid color="#282828" />
-          <ProductDescription>
-            Rua Joaquim de almeida pina 158 - Flandria
-          </ProductDescription>
+          <FontAwesome5 name="map-pin" size={22} solid color="#282828" />
+          <ProductDescription screen={true}>{address}</ProductDescription>
         </ProductDescriptionContainer>
       </CardView>
-    </Container>
+    </View>
   );
 };
 

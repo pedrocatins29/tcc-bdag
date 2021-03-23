@@ -15,50 +15,53 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {styles} from '../../StyleSheetGlobal';
 
 const Card = ({
-  productName,
-  productPrice,
-  productCategory,
-  productStore,
-  productDescription,
-  imageUri,
+  name,
+  price,
+  category,
+  store,
+  description,
+  images,
   navigation,
+  address,
+  phone,
 }) => {
   return (
     <CardView
       onPress={() =>
         navigation.navigate('Product', {
-          productName,
-          productPrice,
-          productCategory,
-          productStore,
-          productDescription,
-          imageUri,
-          name: productName,
+          name,
+          price,
+          category,
+          store,
+          description,
+          images,
+          address,
+          phone,
         })
       }
       style={styles.shadow}>
       <ImageContainer>
         <ImageStore
           source={{
-            uri: imageUri,
+            uri: images[0].uri,
           }}
         />
       </ImageContainer>
       <ProductDetailsContainer>
         <ProductNameRowFlex>
-          <ProductName>{productName}</ProductName>
-          <ProductPrice>{productPrice}</ProductPrice>
+          <ProductName>{name}</ProductName>
+          <ProductPrice>{price}</ProductPrice>
         </ProductNameRowFlex>
         <ProductDescriptionContainer>
           <FontAwesome5 name="store" size={12} solid color="#282828" />
-          <ProductDescription>{productCategory}</ProductDescription>
+          <ProductDescription>{category}</ProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer>
           <FontAwesome5 name="store" size={12} solid color="#282828" />
-          <ProductDescription>{productStore}</ProductDescription>
+          <ProductDescription>{store}</ProductDescription>
         </ProductDescriptionContainer>
 
-        <ProductDescription>{productDescription}</ProductDescription>
+        <ProductDescription>{description}</ProductDescription>
       </ProductDetailsContainer>
     </CardView>
   );

@@ -3,23 +3,23 @@ import React from 'react';
 import {BoxView, ImageStore, TextStore} from './styles';
 import {styles} from '../../StyleSheetGlobal';
 
-const BoxCard = ({storeName, imageUri, navigation}) => {
+const BoxCard = ({name, image, navigation}) => {
   return (
     <BoxView
       onPress={() =>
         navigation.navigate('ProductList', {
-          name: storeName,
+          name: name,
         })
       }
       style={styles.shadow}>
       <ImageStore
         resizeMode="cover"
         source={{
-          uri: imageUri,
+          uri: image,
         }}
       />
 
-      <TextStore>{storeName}</TextStore>
+      <TextStore>{name}</TextStore>
     </BoxView>
   );
 };
