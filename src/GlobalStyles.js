@@ -5,21 +5,18 @@ export const RowFlex = styled.View`
 `;
 
 export const Container = styled.View`
-  background-color: ${(props) => props.theme.bg};
+  background-color: ${props => props.theme.bg};
   flex: 1;
   padding: 16px;
 `;
 
-export const text = styled.Text.attrs((props) => ({
-  size: props.size || '18px',
-}))`
-  color: ${(props) => props.theme.text};
+export const text = styled.Text`
+  color: ${props => props.theme.text};
   font-family: 'Inter-Regular';
-  font-size: ${(props) => props.size};
 `;
 
 export const TitleText = styled(text)`
   margin-top: 10px;
-  font-size: ${(props) => props.theme.font.xxlg};
+  font-size: ${props => props.theme.font.xxlg};
   font-family: 'Inter-Bold';
 `;

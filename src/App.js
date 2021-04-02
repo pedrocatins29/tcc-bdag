@@ -5,6 +5,7 @@ import ProductList from './pages/ProductList/ProductList';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Product from './pages/Product/Product';
+import Register from './pages/Register/Register';
 
 const App = () => {
   const theme = {
@@ -56,6 +57,11 @@ const App = () => {
           <Stack.Screen
             name="Product"
             component={Product}
+            options={headerOptions}
+          />
+          <Stack.Screen
+            name="Register"
+            component={Register}
             options={headerOptions}
           />
         </Stack.Navigator>

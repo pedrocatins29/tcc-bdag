@@ -189,7 +189,7 @@ const Home = ({navigation}) => {
             size={22}
             color="#282828"
           />
-          <SearchBar value={search} onChangeText={(text) => setSearch(text)} />
+          <SearchBar value={search} onChangeText={text => setSearch(text)} />
         </SearchBarContainer>
 
         <Carousel data={carouselData} />
@@ -200,16 +200,16 @@ const Home = ({navigation}) => {
           title="Lojas"
           horizontal={true}
         />
+        <SignUpPressable
+          onPress={() => navigation.navigate('Register', {name: 'Cadastro'})}>
+          <SignUpText>Comece a vender seus produtos aqui +</SignUpText>
+        </SignUpPressable>
         <Section
           navigation={navigation}
           CardItem={Card}
           data={produtos}
           title="Produtos em destaque"
         />
-
-        <SignUpPressable onPress={() => console.log('aaa')}>
-          <SignUpText>Comece a vender seus produtos aqui +</SignUpText>
-        </SignUpPressable>
       </Container>
     </ScrollView>
   );

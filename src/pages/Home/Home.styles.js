@@ -8,7 +8,7 @@ export const CityRowFlex = styled(RowFlex)`
 export const City = styled(text)`
   color: #282828;
   padding-right: 4px;
-  font-size: ${(props) => props.theme.font.sm};
+  font-size: ${props => props.theme.font.sm};
 `;
 
 export const SearchBarContainer = styled(RowFlex)`
@@ -38,6 +38,6 @@ export const SignUpPressable = styled.Pressable`
 export const SignUpText = styled(text)`
   text-align: center;
   padding: 38px;
-  font-size: ${(props) => props.theme.font.lg};
+  font-size: ${props => props.theme.font.lg};
   color: ${({theme}) => theme.white};
 `;
