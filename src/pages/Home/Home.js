@@ -8,48 +8,56 @@ import {
   SearchBarContainer,
   SignUpPressable,
   SignUpText,
+  UserImage,
 } from './Home.styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Carousel from '../../components/Carousel/Carousel';
 import BoxCard from '../../components/SectionList/BoxCard';
 import Section from '../../components/SectionList/Section';
 import Card from '../../components/SectionList/Card';
-import {ScrollView} from 'react-native';
+import {ScrollView, Pressable} from 'react-native';
 import {styles} from '../../StyleSheetGlobal';
 
 const Home = ({navigation}) => {
+  const [user, setUser] = useState(true);
   const [search, setSearch] = useState('');
 
   const carouselData = [
     {
       id: '1',
-      title: 'Alface',
-      icon: 'pepper-hot',
-      color: '#BB112A',
-    },
-    {
-      id: '2',
-      title: 'Pimenta',
-      icon: 'pepper-hot',
-      color: '#BB112A',
+      title: 'Verduras',
+      icon: 'envira',
+      color: '#0F8946',
     },
     {
       id: '3',
-      title: 'Cenoura',
-      icon: 'carrot',
+      title: 'Temperos',
+      icon: 'mortar-pestle',
       color: '#ED9121',
     },
     {
       id: '4',
-      title: 'Maca',
+      title: 'Frutas',
       icon: 'apple-alt',
       color: '#BA0C2E',
     },
     {
+      id: '2',
+      title: 'Legumes',
+      icon: 'seedling',
+      color: '#00E676',
+    },
+    {
       id: '5',
-      title: 'Limao',
-      icon: 'lemon',
-      color: '#fff700',
+      title: 'Graõs',
+      icon: 'circle',
+      color: '#fea82f',
+    },
+    {
+      id: '6',
+      title: 'Outros',
+      icon: 'dot-circle',
+      color: '#282828',
     },
   ];
 
@@ -168,8 +176,21 @@ const Home = ({navigation}) => {
       <Container>
         <CityRowFlex>
           <RowFlex>
-            <City>Pompeia</City>
-            <Icon name="arrow-up" size={18} color="#ADC178" />
+            {user ? (
+              <Pressable onPress={() => console.log('go to user profile')}>
+                <UserImage
+                  source={{
+                    uri:
+                      'https://cdn-cosmos.bluesoft.com.br/suppliers/supplier_27137689000157.png',
+                  }}
+                />
+              </Pressable>
+            ) : null}
+
+            <RowFlex>
+              <City>Pompeia</City>
+              <Icon name="arrow-up" size={18} color="#ADC178" />
+            </RowFlex>
           </RowFlex>
           <Icon name="sign-out" size={22} color="#282828" />
         </CityRowFlex>

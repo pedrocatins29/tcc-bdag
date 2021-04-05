@@ -20,7 +20,7 @@ const Carousel = ({data}) => {
             color={item.color}
           />
         )}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       />
     </FlexSafeAreaView>
   );

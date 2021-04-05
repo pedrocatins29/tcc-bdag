@@ -8,7 +8,7 @@ const Item = ({title, icon = false, color, setSelectedItem, selected}) => {
     <Pressable onPress={() => setSelectedItem(title)}>
       <Container>
         {icon ? (
-          <FontAwesome5 name={icon} size={24} solid color={color} />
+          <FontAwesome5 name={icon} size={28} solid color={color} />
         ) : null}
         <ItemText selected={selected}>{title}</ItemText>
       </Container>

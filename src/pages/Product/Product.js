@@ -1,7 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useHeaderHeight} from '@react-navigation/stack';
-import {Container} from '../../GlobalStyles';
 import {
   CardView,
   CategoryText,

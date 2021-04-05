@@ -28,7 +28,7 @@ export const SearchBar = styled.TextInput`
 export const SignUpPressable = styled.Pressable`
   padding: 8px;
   margin-top: 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   justify-content: center;
   align-items: center;
   background-color: ${({theme}) => theme.text};
@@ -37,7 +37,11 @@ export const SignUpPressable = styled.Pressable`
 
 export const SignUpText = styled(text)`
   text-align: center;
-  padding: 38px;
   font-size: ${props => props.theme.font.lg};
   color: ${({theme}) => theme.white};
+`;
+
+export const UserImage = styled.Image`
+  width: 50px;
+  height: 50px;
 `;

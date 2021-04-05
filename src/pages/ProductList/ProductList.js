@@ -5,6 +5,7 @@ import Card from '../../components/SectionList/Card';
 import Carousel from '../../components/Carousel/Carousel';
 import {Container} from '../../GlobalStyles';
 import {useHeaderHeight} from '@react-navigation/stack';
+import Fab from '../../components/Fab/Fab';
 
 const ProductList = ({navigation}) => {
   const headerHeight = useHeaderHeight();
@@ -122,6 +123,7 @@ const ProductList = ({navigation}) => {
           </View>
         );
       })}
+      <Fab navigation={navigation} />
     </Container>
   );
 };
