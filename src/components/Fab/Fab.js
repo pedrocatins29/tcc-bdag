@@ -6,7 +6,7 @@ import {RoundedPressable} from './Fab.styles';
 const Fab = ({navigation}) => {
   return (
     <RoundedPressable
-      style={{borderRadius: 75}}
+      style={{borderRadius: 36}}
       onPress={() =>
         navigation.navigate('AddProduct', {name: 'Adicionar produto'})
       }>

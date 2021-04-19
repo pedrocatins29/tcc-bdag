@@ -195,15 +195,13 @@ const Home = ({navigation}) => {
           <Icon name="sign-out" size={22} color="#282828" />
         </CityRowFlex>
         <SearchBarContainer style={styles.shadow}>
-          <Icon
-            name="search"
-            size={22}
+          <Pressable
             style={{
               position: 'absolute',
               left: 12,
-            }}
-            color="#282828"
-          />
+            }}>
+            <Icon name="search" size={22} color="#282828" />
+          </Pressable>
           <Icon
             style={{position: 'absolute', right: 12}}
             name="filter"

@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {Controller} from 'react-hook-form';
 import {RegisterTextInput, TextError, TextLabel} from './styles';
 
-const Input = ({control, errors, name, required}) => {
+const Input = ({control, errors, name, required, select = false}) => {
   const [borderColor, setBorderColor] = useState('white');
   return (
     <View>
@@ -19,7 +19,7 @@ const Input = ({control, errors, name, required}) => {
             }}
             onFocus={() => setBorderColor('#00E676')}
             onBlur={() => setBorderColor('white')}
-            onChangeText={value => onChange(value)}
+            onChangeText={valor => onChange(valor)}
             value={value}
           />
         )}
