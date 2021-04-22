@@ -14,6 +14,16 @@ const ProductController = {
       const result = await product.save();
       return result;
     } catch (error) {
+      console.log(error);
+      throw new Error(error);
+    }
+  },
+
+  async find() {
+    try {
+      const result = await productModel.find();
+      return result;
+    } catch (error) {
       throw new Error(error);
     }
   },
