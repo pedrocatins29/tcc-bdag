@@ -6,6 +6,7 @@ import {useForm} from 'react-hook-form';
 import {
   ButtonText,
   InformativeText,
+  InformativeText2,
   PlacehoderText,
   SignUpPressable,
 } from './Register.styles';
@@ -29,10 +30,10 @@ const Register = () => {
     return (
       <>
         {key === 5 ? (
-          <InformativeText>
+          <InformativeText2>
             Algum outro nome que pode ajudar as pessoas identificarem seu
             negócio?
-          </InformativeText>
+          </InformativeText2>
         ) : null}
         <Input
           key={key}

@@ -31,7 +31,7 @@ export const SignUpPressable = styled.Pressable`
   border-radius: 8px;
   justify-content: center;
   align-items: center;
-  background-color: ${({theme}) => theme.text};
+  background-color: #2e770b;
   height: 80px;
 `;
 

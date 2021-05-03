@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {text} from '../../GlobalStyles';
 
 export const ImagePickerContainer = styled.Pressable`
   justify-content: center;
@@ -7,6 +8,20 @@ export const ImagePickerContainer = styled.Pressable`
   /* height: 50%;
   width: 100%; */
   margin-bottom: 20px;
+`;
+
+export const SignUpPressable = styled.Pressable`
+  margin-top: 20px;
+  background-color: #0f8946;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 54px;
+`;
+
+export const ButtonText = styled(text)`
+  font-size: ${({theme}) => theme.font.md};
+  color: white;
 `;
 
 export const SelectedImage = styled.Image`

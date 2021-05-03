@@ -1,19 +1,21 @@
 import {useHeaderHeight} from '@react-navigation/stack';
 import React, {useState} from 'react';
-import {View, ScrollView, Image, Dimensions, StyleSheet} from 'react-native';
+import {ScrollView, Image, Dimensions, StyleSheet} from 'react-native';
 import {Container} from '../../GlobalStyles';
 import {useForm} from 'react-hook-form';
 import Input from '../../components/Register/Input';
 import {
-  AddMoreImages,
   ClearImage,
   ImagePickerContainer,
   SelectedImage,
   SelectedImageContainer,
+  SignUpPressable,
+  ButtonText,
 } from './AddProduct.styles';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 import SelectInput from '../../components/Input/SelectInput';
+import {TextLabel} from '../../components/Register/styles';
 
 const {width: screenWidth} = Dimensions.get('window');
 
@@ -22,29 +24,50 @@ const AddProduct = () => {
   const {control, handleSubmit, errors} = useForm();
   const onSubmit = data => console.log(data);
   const [image, setImage] = useState();
+  const [category, setCategory] = useState('');
 
   const itemsSelect = [
     {
-      label: 'Orange',
-      value: 'orange',
-      key: 'orange',
-      color: 'orange',
-      inputLabel: 'Orange!',
+      id: '1',
+      label: 'Verduras',
+      value: 'Verduras',
+      color: '#FFFFFF',
     },
     {
-      label: 'Orange',
-      value: 'orange',
-      key: 'orange1',
-      color: 'orange',
-      inputLabel: 'Orange!',
+      id: '2',
+      label: 'Temperos',
+      value: 'Temperos',
+      color: '#FFFFFF',
+    },
+    {
+      id: '3',
+      label: 'Frutas',
+      value: 'Frutas',
+      color: '#FFFFFF',
+    },
+    {
+      id: '4',
+      label: 'Legumes',
+      value: 'Legumes',
+      color: '#FFFFFF',
+    },
+    {
+      id: '5',
+      label: 'Graõs',
+      value: 'Graõs',
+      color: '#FFFFFF',
+    },
+    {
+      id: '6',
+      label: 'Outros',
+      value: 'Outros',
+      color: '#FFFFFF',
     },
   ];
 
   const inputs = [
     {name: 'Nome do produto', required: true},
     {name: 'Preço', required: true},
-    // {name: '/Unidade', required: true},
-    // {name: 'Categoria', required: true},
     {name: 'Descrição', required: true},
   ];
 
@@ -61,15 +84,29 @@ const AddProduct = () => {
   };
 
   const Fields = inputs.map((item, key) => {
-    return (
-      <Input
-        key={key}
-        control={control}
-        errors={errors}
-        name={item.name}
-        required={item.required}
-      />
-    );
+    if (key !== 2) {
+      return (
+        <Input
+          key={key}
+          control={control}
+          errors={errors}
+          name={item.name}
+          required={item.required}
+        />
+      );
+    } else {
+      return (
+        <Input
+          multiline={true}
+          numberOfLines={4}
+          key={key}
+          control={control}
+          errors={errors}
+          name={item.name}
+          required={item.required}
+        />
+      );
+    }
   });
 
   return (
@@ -107,10 +144,15 @@ const AddProduct = () => {
 
         <Image />
         {Fields}
+        <TextLabel>Categoria</TextLabel>
         <SelectInput
-          handleValueChange={value => console.log(value)}
+          value={category}
+          handleValueChange={setCategory}
           items={itemsSelect}
         />
+        <SignUpPressable onPress={() => handleSubmit(onSubmit)}>
+          <ButtonText>Cadastrar!</ButtonText>
+        </SignUpPressable>
       </Container>
     </ScrollView>
   );

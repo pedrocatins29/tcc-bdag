@@ -3,7 +3,15 @@ import {View, Text} from 'react-native';
 import {Controller} from 'react-hook-form';
 import {RegisterTextInput, TextError, TextLabel} from './styles';
 
-const Input = ({control, errors, name, required, select = false}) => {
+const Input = ({
+  control,
+  errors,
+  name,
+  required,
+  select = false,
+  multiline,
+  numberOfLines,
+}) => {
   const [borderColor, setBorderColor] = useState('white');
   return (
     <View>
@@ -12,7 +20,10 @@ const Input = ({control, errors, name, required, select = false}) => {
         control={control}
         render={({onChange, onBlur, value}) => (
           <RegisterTextInput
+            multiline={multiline}
+            numberOfLines={numberOfLines}
             style={{
+              textAlignVertical: 'top',
               borderColor: borderColor,
               borderStyle: 'solid',
               borderWidth: 1,

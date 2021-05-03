@@ -8,6 +8,7 @@ import {
   CustomProductDescription,
 } from './Product.styles';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Fab from '../../components/Fab/Fab';
 import {
   ProductDescription,
   ProductDescriptionContainer,
@@ -17,7 +18,7 @@ import {
 } from '../../components/SectionList/styles';
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 
-const Product = ({route}) => {
+const Product = ({route, navigation}) => {
   const headerHeight = useHeaderHeight();
   const {
     name,
@@ -57,6 +58,7 @@ const Product = ({route}) => {
           <ProductDescription screen={true}>{address}</ProductDescription>
         </ProductDescriptionContainer>
       </CardView>
+      <Fab navigation={navigation} icon="pen" />
     </View>
   );
 };

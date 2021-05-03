@@ -41,8 +41,8 @@ const ProductList = ({navigation}) => {
           ],
           name: 'Alface Crespa',
           description: 'Um dos melhores alfaces de toda a regiao 100% organico',
-          store: 'Loja do pedrao',
-          price: '4,99/Kg',
+          store: 'Da Tribo',
+          price: 'R$4,99/Kg',
           category: 'Verduras',
           phone: '981044341',
           address: 'Rua Joaquim de almeida pina 158 - Flandria',
@@ -56,8 +56,7 @@ const ProductList = ({navigation}) => {
           key: '11',
           images: [
             {
-              uri:
-                'https://images-na.ssl-images-amazon.com/images/I/51jqI%2BrGQQL.jpg',
+              uri: 'https://pngimg.com/uploads/tomato/tomato_PNG12511.png',
             },
 
             {
@@ -73,10 +72,10 @@ const ProductList = ({navigation}) => {
                 'https://assets.sainsburys-groceries.co.uk/gol/6860386/1/640x640.jpg',
             },
           ],
-          name: 'Cenoura',
-          description: 'Cenoura mais verde de todo o velho oeste',
-          store: 'Carrots and Cia',
-          price: '2,99/Kg',
+          name: 'Tomate',
+          description: 'Tomate mais vermelho que você encontra na região',
+          store: 'Da Tribo',
+          price: 'R$2,99/Kg',
           category: 'Verduras',
           phone: '981044341',
           address: 'Rua das verduras 158 - Flandria',
@@ -88,23 +87,27 @@ const ProductList = ({navigation}) => {
   const carouselData = [
     {
       id: '1',
-      title: 'Alface',
+      title: 'Verduras',
     },
     {
       id: '2',
-      title: 'Pimenta',
+      title: 'Temperos',
     },
     {
       id: '3',
-      title: 'Cenoura',
+      title: 'Frutas',
     },
     {
       id: '4',
-      title: 'Maca',
+      title: 'Legumes',
     },
     {
       id: '5',
-      title: 'Limao',
+      title: 'Graõs',
+    },
+    {
+      id: '6',
+      title: 'Outros',
     },
   ];
 
@@ -123,7 +126,7 @@ const ProductList = ({navigation}) => {
           </View>
         );
       })}
-      <Fab navigation={navigation} />
+      <Fab navigation={navigation} icon="plus" />
     </Container>
   );
 };

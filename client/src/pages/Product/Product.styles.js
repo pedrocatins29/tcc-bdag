@@ -3,7 +3,7 @@ import {text} from '../../GlobalStyles';
 
 export const CardView = styled.View`
   flex: 2;
-  background-color: ${(props) => props.theme.white};
+  background-color: ${props => props.theme.white};
   padding: 24px;
 `;
 
@@ -13,13 +13,13 @@ export const CategoryText = styled.Text`
 `;
 
 export const Line = styled.View`
-  background-color: #aaaaaa;
+  background-color: #fea82f;
   width: 100%;
   height: 1.2px;
 `;
 
 export const CustomProductDescription = styled(text)`
   font-family: 'Inter-Light';
-  color: ${(props) => props.theme.text};
-  font-size: ${(props) => props.theme.font.md};
+  color: ${props => props.theme.text};
+  font-size: ${props => props.theme.font.md};
 `;
