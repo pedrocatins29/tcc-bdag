@@ -2,19 +2,30 @@ import express from "express";
 import routes from "./routes";
 import { connect, connection } from "mongoose";
 import bodyParser from "body-parser";
+import cors from "cors";
+import { config } from "dotenv";
 
-connect(
-  "mongodb+srv://pedro:0yQhiDBIunaOQBZ0@tcc.bapvw.mongodb.net/tcc?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+config();
+
+connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 connection.once("open", () => {
   console.log("conectado com o banco de dados");
 });
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://192.168.86.4",
+  })
+);
+
 app.use(bodyParser.json());
 
-app.get("/", (_, res) => res.send("Ola mundinho"));
+app.get("/", (_, res) => res.send({ message: "Ola mundinho" }));
 
 app.use("/v1", routes);
 

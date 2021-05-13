@@ -1,6 +1,6 @@
 import {useHeaderHeight} from '@react-navigation/stack';
 import React, {useState} from 'react';
-import {ScrollView, Image, Dimensions, StyleSheet} from 'react-native';
+import {ScrollView, Image, useWindowDimensions, View} from 'react-native';
 import {Container} from '../../GlobalStyles';
 import {useForm} from 'react-hook-form';
 import Input from '../../components/Register/Input';
@@ -17,14 +17,14 @@ import {launchImageLibrary} from 'react-native-image-picker';
 import SelectInput from '../../components/Input/SelectInput';
 import {TextLabel} from '../../components/Register/styles';
 
-const {width: screenWidth} = Dimensions.get('window');
-
 const AddProduct = () => {
+  const screenWidth = useWindowDimensions().width;
   const headerHeight = useHeaderHeight();
   const {control, handleSubmit, errors} = useForm();
   const onSubmit = data => console.log(data);
   const [image, setImage] = useState();
   const [category, setCategory] = useState('');
+  const [unidade, setUnidade] = useState('');
 
   const itemsSelect = [
     {
@@ -61,6 +61,27 @@ const AddProduct = () => {
       id: '6',
       label: 'Outros',
       value: 'Outros',
+      color: '#FFFFFF',
+    },
+  ];
+
+  const unidadeSelect = [
+    {
+      id: '1',
+      label: 'Kg',
+      value: 'Kg',
+      color: '#FFFFFF',
+    },
+    {
+      id: '2',
+      label: 'Saco',
+      value: 'Saco',
+      color: '#FFFFFF',
+    },
+    {
+      id: '3',
+      label: 'Unidade',
+      value: 'Unidade',
       color: '#FFFFFF',
     },
   ];
@@ -110,10 +131,14 @@ const AddProduct = () => {
   });
 
   return (
-    <ScrollView style={{flex: 1, paddingTop: headerHeight}}>
+    <ScrollView
+      style={{
+        backgroundColor: 'red',
+        marginTop: headerHeight,
+      }}>
       <Container>
         {image ? (
-          <SelectedImageContainer style={styles.item}>
+          <SelectedImageContainer style={{flex: 1, height: screenWidth - 60}}>
             <ClearImage onPress={() => setImage(undefined)}>
               <FontAwesome5
                 name="times-circle"
@@ -134,7 +159,7 @@ const AddProduct = () => {
           </SelectedImageContainer>
         ) : (
           <ImagePickerContainer
-            style={styles.item}
+            style={{flex: 1, height: screenWidth - 60}}
             onPress={() =>
               launchImageLibrary({mediaType: 'photo'}, handleImagePicker)
             }>
@@ -144,12 +169,25 @@ const AddProduct = () => {
 
         <Image />
         {Fields}
-        <TextLabel>Categoria</TextLabel>
-        <SelectInput
-          value={category}
-          handleValueChange={setCategory}
-          items={itemsSelect}
-        />
+        <View>
+          <TextLabel>Unidade</TextLabel>
+          <SelectInput
+            label="Selecione a unidade..."
+            value={unidade}
+            handleValueChange={setUnidade}
+            items={unidadeSelect}
+          />
+        </View>
+        <View>
+          <TextLabel>Categoria</TextLabel>
+          <SelectInput
+            value={category}
+            label="Selecione uma categoria..."
+            handleValueChange={setCategory}
+            items={itemsSelect}
+          />
+        </View>
+
         <SignUpPressable onPress={() => handleSubmit(onSubmit)}>
           <ButtonText>Cadastrar!</ButtonText>
         </SignUpPressable>
@@ -160,9 +198,8 @@ const AddProduct = () => {
 
 export default AddProduct;
 
-const styles = StyleSheet.create({
-  item: {
-    flex: 1,
-    height: screenWidth - 60,
-  },
-});
+// const styles = StyleSheet.create({
+//   item: {
+
+//   },
+// });

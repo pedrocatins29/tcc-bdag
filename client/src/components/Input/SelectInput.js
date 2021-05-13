@@ -2,13 +2,26 @@ import React from 'react';
 import {View, Text, StyleSheet, Platform} from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import {RegisterTextInput} from './style';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const SelectInput = ({items, handleValueChange, value}) => {
+const SelectInput = ({items, handleValueChange, value, label}) => {
   return (
     <RNPickerSelect
       value={value}
+      Icon={() => (
+        <FontAwesome5
+          name={'arrow-down'}
+          size={16}
+          solid
+          color={'#00E676'}
+          style={{
+            top: 18,
+            right: 10,
+          }}
+        />
+      )}
       placeholder={{
-        label: 'Selecione uma categoria...',
+        label,
         value: null,
         color: '#9EA0A4',
       }}

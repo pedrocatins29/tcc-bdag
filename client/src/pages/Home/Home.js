@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Container, RowFlex} from '../../GlobalStyles';
 import {
   City,
@@ -21,66 +21,6 @@ import {styles} from '../../StyleSheetGlobal';
 const Home = ({navigation}) => {
   const [user, setUser] = useState(true);
   const [search, setSearch] = useState('');
-
-  const carouselData = [
-    {
-      id: '1',
-      title: 'Verduras',
-      icon: 'envira',
-      color: '#0F8946',
-    },
-    {
-      id: '3',
-      title: 'Temperos',
-      icon: 'mortar-pestle',
-      color: '#ED9121',
-    },
-    {
-      id: '4',
-      title: 'Frutas',
-      icon: 'apple-alt',
-      color: '#BA0C2E',
-    },
-    {
-      id: '2',
-      title: 'Legumes',
-      icon: 'seedling',
-      color: '#00E676',
-    },
-    {
-      id: '5',
-      title: 'Graõs',
-      icon: 'circle',
-      color: '#fea82f',
-    },
-    {
-      id: '6',
-      title: 'Outros',
-      icon: 'dot-circle',
-      color: '#282828',
-    },
-  ];
-
-  const lojas = [
-    {
-      key: '1',
-      image:
-        'https://cdn-cosmos.bluesoft.com.br/suppliers/supplier_27137689000157.png',
-      name: 'Companhia dos fermentados',
-    },
-    {
-      key: '2',
-      image:
-        'https://cdn-images-1.medium.com/max/1200/1*Jqncsxz85sX6HVxcywb_pw.jpeg',
-      name: 'Cogumelado',
-    },
-    {
-      key: '3',
-      image:
-        'https://scontent.fmii2-1.fna.fbcdn.net/v/t1.6435-9/115886616_2602431763332419_9189550693599997563_n.png?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFdceh0cpsI6Sq_3E-ZqklGqELc-lB8zA2oQtz6UHzMDQWGHTyc3hokHjko3dzwWTOBDGDZALDZvhquHzYR9evO&_nc_ohc=F3PEEdsvhgQAX9BThj_&_nc_ht=scontent.fmii2-1.fna&oh=66d364eff609a9cfac4ad6b8c088076e&oe=60B67C31',
-      name: 'Da Tribo',
-    },
-  ];
 
   const produtos = [
     {
@@ -211,11 +151,10 @@ const Home = ({navigation}) => {
           <SearchBar value={search} onChangeText={text => setSearch(text)} />
         </SearchBarContainer>
 
-        <Carousel data={carouselData} />
+        <Carousel />
         <Section
           navigation={navigation}
           CardItem={BoxCard}
-          data={lojas}
           title="Lojas"
           horizontal={true}
         />
@@ -223,12 +162,12 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Register', {name: 'Cadastro'})}>
           <SignUpText>Comece a vender seus produtos aqui +</SignUpText>
         </SignUpPressable>
-        <Section
+        {/* <Section
           navigation={navigation}
           CardItem={Card}
           data={produtos}
           title="Produtos em destaque"
-        />
+        /> */}
       </Container>
     </ScrollView>
   );

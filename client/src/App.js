@@ -7,6 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Product from './pages/Product/Product';
 import Register from './pages/Register/Register';
 import AddProduct from './pages/AddProduct/AddProduct';
+import {QueryClientProvider, QueryClient} from 'react-query';
 
 const App = () => {
   const theme = {
@@ -28,6 +29,7 @@ const App = () => {
   };
 
   const Stack = createStackNavigator();
+  const queryClient = new QueryClient();
 
   const headerOptions = ({route}) => {
     return {
@@ -42,37 +44,39 @@ const App = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="ProductList"
-            options={headerOptions}
-            component={ProductList}
-          />
-          <Stack.Screen
-            name="Product"
-            component={Product}
-            options={headerOptions}
-          />
-          <Stack.Screen
-            name="Register"
-            component={Register}
-            options={headerOptions}
-          />
-          <Stack.Screen
-            name="AddProduct"
-            component={AddProduct}
-            options={headerOptions}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="ProductList"
+              options={headerOptions}
+              component={ProductList}
+            />
+            <Stack.Screen
+              name="Product"
+              component={Product}
+              options={headerOptions}
+            />
+            <Stack.Screen
+              name="Register"
+              component={Register}
+              options={headerOptions}
+            />
+            <Stack.Screen
+              name="AddProduct"
+              component={AddProduct}
+              options={headerOptions}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 };
 

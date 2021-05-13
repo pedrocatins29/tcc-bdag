@@ -2,10 +2,14 @@ import React, {useState} from 'react';
 import {FlatList} from 'react-native';
 import Item from './Item';
 import {FlexSafeAreaView} from './styles';
+import useApi from '../../hooks/useApi';
 
-const Carousel = ({data}) => {
+const Carousel = () => {
+  const {isLoading, error, data, isFetching} = useApi(
+    '/categories',
+    'categoriesData',
+  );
   const [selectedItem, setSelectedItem] = useState();
-
   return (
     <FlexSafeAreaView>
       <FlatList
@@ -20,7 +24,7 @@ const Carousel = ({data}) => {
             color={item.color}
           />
         )}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
       />
     </FlexSafeAreaView>
   );

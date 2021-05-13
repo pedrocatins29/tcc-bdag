@@ -1,10 +1,12 @@
 import categoryModel from "../models/category";
 
 const CategoryController = {
-  async add(name) {
+  async add(title, icon, color) {
     try {
       const category = new categoryModel({
-        name,
+        title,
+        icon,
+        color,
       });
       const result = await category.save();
       return result;
