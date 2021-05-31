@@ -20,21 +20,12 @@ import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 
 const Product = ({route, navigation}) => {
   const headerHeight = useHeaderHeight();
-  const {
-    name,
-    price,
-    category,
-    store,
-    description,
-    images,
-    phone,
-    address,
-  } = route.params;
+  const {name, price, category, store, description, image} = route.params;
   return (
     <View style={{flex: 1, backgroundColor: 'white', paddingTop: headerHeight}}>
-      <ImageCarousel images={images} />
+      <ImageCarousel images={image} />
       <CardView>
-        <CategoryText>{category}</CategoryText>
+        <CategoryText color={category.color}>{category.title}</CategoryText>
         <ProductNameRowFlex style={style.marginBot}>
           <ProductName screen={true}>{name}</ProductName>
           <ProductPrice screen={true}>{price}</ProductPrice>
@@ -47,15 +38,17 @@ const Product = ({route, navigation}) => {
         </ProductDescriptionContainer>
         <ProductDescriptionContainer style={style.marginBot}>
           <FontAwesome5 name="store" size={18} solid color="#282828" />
-          <ProductDescription screen={true}>{store}</ProductDescription>
+          <ProductDescription screen={true}>{store.name}</ProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer style={style.marginBot}>
           <FontAwesome5 name="whatsapp" size={22} solid color="#282828" />
-          <ProductDescription screen={true}>{phone}</ProductDescription>
+          <ProductDescription screen={true}>
+            {store.phoneNumber}
+          </ProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer style={style.marginBot}>
           <FontAwesome5 name="map-pin" size={22} solid color="#282828" />
-          <ProductDescription screen={true}>{address}</ProductDescription>
+          <ProductDescription screen={true}>{store.address}</ProductDescription>
         </ProductDescriptionContainer>
       </CardView>
       <Fab navigation={navigation} icon="pen" />

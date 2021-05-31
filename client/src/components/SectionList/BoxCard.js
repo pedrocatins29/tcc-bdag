@@ -3,12 +3,13 @@ import React from 'react';
 import {BoxView, ImageStore, TextStore} from './styles';
 import {styles} from '../../StyleSheetGlobal';
 
-const BoxCard = ({name, image, navigation}) => {
+const BoxCard = ({name, image, navigation, data}) => {
   return (
     <BoxView
       onPress={() =>
         navigation.navigate('ProductList', {
           name: name,
+          data,
         })
       }
       style={styles.shadow}>

@@ -20,11 +20,12 @@ const Card = ({
   category,
   store,
   description,
-  images,
+  image,
   navigation,
   address,
   phone,
 }) => {
+  console.log(category.title);
   return (
     <CardView
       onPress={() =>
@@ -34,7 +35,7 @@ const Card = ({
           category,
           store,
           description,
-          images,
+          image,
           address,
           phone,
         })
@@ -43,7 +44,7 @@ const Card = ({
       <ImageContainer>
         <ImageStore
           source={{
-            uri: images[0].uri,
+            uri: image[0] || products.image[0],
           }}
         />
       </ImageContainer>
@@ -54,11 +55,11 @@ const Card = ({
         </ProductNameRowFlex>
         <ProductDescriptionContainer>
           <FontAwesome5 name="store" size={12} solid color="#282828" />
-          <ProductDescription>{category}</ProductDescription>
+          <ProductDescription>{category.title}</ProductDescription>
         </ProductDescriptionContainer>
         <ProductDescriptionContainer>
           <FontAwesome5 name="store" size={12} solid color="#282828" />
-          <ProductDescription>{store}</ProductDescription>
+          <ProductDescription>{store.name}</ProductDescription>
         </ProductDescriptionContainer>
 
         <ProductDescription>{description}</ProductDescription>

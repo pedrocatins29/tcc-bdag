@@ -21,8 +21,11 @@ const ProductController = {
 
   async find() {
     try {
-      const result = await productModel.find();
-      return result;
+      const products = await productModel
+        .find()
+        .populate("store")
+        .populate("category");
+      return products;
     } catch (error) {
       throw new Error(error);
     }

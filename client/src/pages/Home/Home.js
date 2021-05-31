@@ -17,10 +17,13 @@ import Section from '../../components/SectionList/Section';
 import Card from '../../components/SectionList/Card';
 import {ScrollView, Pressable} from 'react-native';
 import {styles} from '../../StyleSheetGlobal';
+import useApi from '../../hooks/useApi';
 
 const Home = ({navigation}) => {
   const [user, setUser] = useState(true);
   const [search, setSearch] = useState('');
+  const stores = useApi('/stores', 'storesData');
+  const products = useApi('/products', 'productsData');
 
   const produtos = [
     {
@@ -155,6 +158,7 @@ const Home = ({navigation}) => {
         <Section
           navigation={navigation}
           CardItem={BoxCard}
+          data={stores.data}
           title="Lojas"
           horizontal={true}
         />
@@ -162,12 +166,12 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Register', {name: 'Cadastro'})}>
           <SignUpText>Comece a vender seus produtos aqui +</SignUpText>
         </SignUpPressable>
-        {/* <Section
+        <Section
           navigation={navigation}
           CardItem={Card}
-          data={produtos}
+          data={products.data}
           title="Produtos em destaque"
-        /> */}
+        />
       </Container>
     </ScrollView>
   );

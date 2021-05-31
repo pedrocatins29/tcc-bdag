@@ -3,7 +3,7 @@ import storeModel from "../models/store";
 const StoreController = {
   async find() {
     try {
-      const result = await storeModel.find();
+      const result = await storeModel.find().populate("products");
       return result;
     } catch (error) {
       throw new Error(error);

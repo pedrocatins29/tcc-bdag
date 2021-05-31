@@ -8,7 +8,8 @@ export const CardView = styled.View`
 `;
 
 export const CategoryText = styled.Text`
-  color: ${({theme}) => theme.green};
+  /* color: ${({theme}) => theme.green}; */
+  color: ${props => props.color};
   font-size: ${({theme}) => theme.font.md};
 `;
 

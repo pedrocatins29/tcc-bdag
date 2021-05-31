@@ -6,14 +6,13 @@ const {width: screenWidth} = Dimensions.get('window');
 const ImageCarousel = ({images}) => {
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
-
   const renderItem = ({item, index}, parallaxProps) => {
     return (
       <View style={styles.item}>
         <ParallaxImage
           style={{width: '100%', aspectRatio: 1, resizeMode: 'cover'}}
           source={{
-            uri: item.uri,
+            uri: item,
           }}
           containerStyle={styles.imageContainer}
           parallaxFactor={0.8}
@@ -33,7 +32,7 @@ const ImageCarousel = ({images}) => {
         sliderHeight={screenWidth}
         itemWidth={screenWidth - 60}
         hasParallaxImages={true}
-        onSnapToItem={(index) => setActiveSlide(index)}
+        onSnapToItem={index => setActiveSlide(index)}
       />
       <Pagination
         dotsLength={images.length}

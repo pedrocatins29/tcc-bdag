@@ -1,23 +1,21 @@
 import React from 'react';
 import {TitleText} from '../../GlobalStyles';
-import useApi from '../../hooks/useApi';
+
 import {ViewCem} from './styles';
 
-const Section = ({CardItem, title, horizontal = false, navigation}) => {
-  const {data} = useApi('/stores', 'storesData');
-
+const Section = ({CardItem, title, horizontal = false, navigation, data}) => {
   return (
     <>
       <TitleText>{title}</TitleText>
       {horizontal ? (
         <ViewCem>
           {data?.map(item => {
-            return <CardItem navigation={navigation} {...item} />;
+            return <CardItem navigation={navigation} {...item} data={data} />;
           })}
         </ViewCem>
       ) : (
         data?.map(item => {
-          return <CardItem navigation={navigation} {...item} />;
+          return <CardItem navigation={navigation} {...item} data={data} />;
         })
       )}
     </>
